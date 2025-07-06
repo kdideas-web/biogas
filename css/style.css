@@ -1,0 +1,70 @@
+/* Custom CSS styles will go here */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 56px; /* Adjust for fixed navbar height */
+}
+
+main {
+    flex: 1;
+}
+
+.hero-section {
+    /* min-height: 100vh; Calculated based on viewport, might not need explicit min-height if navbar is fixed and sections are substantial */
+    /* background: url('https://via.placeholder.com/1920x1080.png?text=Biogas+Plant+Concept') no-repeat center center; */
+    /* background-size: cover; */
+    /* color: white; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.hero-section .container {
+    /* background-color: rgba(0, 0, 0, 0.5); */ /* Dark overlay for text readability */
+    /* padding: 3rem; */
+    /* border-radius: 0.5rem; */
+}
+
+.service-card, .project-card {
+    margin-bottom: 30px;
+    transition: transform .2s; /* Animation */
+}
+
+.service-card:hover, .project-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.benefit-item img {
+    width: 80px; /* Smaller benefit icons */
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+#contact iframe {
+    border-radius: 0.25rem;
+}
+
+.footer {
+    /* background-color: #343a40; /* Dark background for footer */
+    /* color: white; */
+}
+
+.footer a {
+    /* color: #f8f9fa; /* Light links for footer */
+    /* text-decoration: none; */
+}
+
+.footer a:hover {
+    /* color: #adb5bd; /* Lighter link color on hover */
+}
+
+/* Ensure sections have enough padding for scrollspy */
+section {
+    padding-top: 70px; /* At least navbar height + some buffer */
+    margin-top: -56px; /* Negative margin to offset fixed navbar */
+}
+#home { /* Special handling for home as it's the first section */
+    padding-top: 0;
+    margin-top: 0; /* No negative margin needed for the very first section if it's full viewport height */
+}
