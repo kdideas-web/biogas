@@ -3,68 +3,127 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 56px; /* Adjust for fixed navbar height */
+    /* padding-top: 56px; /* Removed global padding-top, handled by header.php logic */
 }
 
 main {
     flex: 1;
+     /* padding-top: 56px; /* Add padding to main if navbar is fixed and not part of header file's structure */
 }
 
-.hero-section {
-    /* min-height: 100vh; Calculated based on viewport, might not need explicit min-height if navbar is fixed and sections are substantial */
-    /* background: url('https://via.placeholder.com/1920x1080.png?text=Biogas+Plant+Concept') no-repeat center center; */
+
+/* Styles for the new home page hero if it's not full viewport height */
+#home-hero {
+    min-height: 70vh; /* Adjusted from 100vh or 80vh if preferred */
+    /* background: url('https://via.placeholder.com/1920x1080.png?text=Welcome+to+BioGas+Accra') no-repeat center center; */
     /* background-size: cover; */
     /* color: white; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
 }
 
-.hero-section .container {
-    /* background-color: rgba(0, 0, 0, 0.5); */ /* Dark overlay for text readability */
+#home-hero .container {
+    /* background-color: rgba(0, 0, 0, 0.5); */
     /* padding: 3rem; */
     /* border-radius: 0.5rem; */
 }
+
 
 .service-card, .project-card {
     margin-bottom: 30px;
     transition: transform .2s; /* Animation */
 }
 
+.service-card .card-body, .project-card .card-body, .card.h-100 .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card .card-body .btn, .project-card .card-body .btn, .card.h-100 .card-body .btn {
+    margin-top: auto; /* Pushes button to the bottom */
+    align-self: flex-start; /* Aligns button to the left for consistency if text is centered */
+}
+.card.text-center .card-body .btn {
+    align-self: center; /* Center button if card text is centered */
+}
+
+
 .service-card:hover, .project-card:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-.benefit-item img {
-    width: 80px; /* Smaller benefit icons */
+/* Benefits page specific styling if needed, or use generic card styling */
+.benefit-item img { /* This was from single page, may not be used directly now */
+    width: 80px;
     height: 80px;
     margin-bottom: 1rem;
 }
 
-#contact iframe {
+/* Contact Page Map */
+#contact iframe, .map-responsive iframe {
     border-radius: 0.25rem;
+    border:0;
+}
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%; /* Aspect ratio */
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
 
+
 .footer {
-    /* background-color: #343a40; /* Dark background for footer */
+    /* background-color: #343a40; */
     /* color: white; */
 }
 
 .footer a {
-    /* color: #f8f9fa; /* Light links for footer */
+    /* color: #f8f9fa; */
     /* text-decoration: none; */
 }
 
 .footer a:hover {
-    /* color: #adb5bd; /* Lighter link color on hover */
+    /* color: #adb5bd; */
 }
 
-/* Ensure sections have enough padding for scrollspy */
-section {
-    padding-top: 70px; /* At least navbar height + some buffer */
-    margin-top: -56px; /* Negative margin to offset fixed navbar */
+/* Removed scrollspy specific CSS as it's not used in multi-page */
+/* section {
+    padding-top: 70px;
+    margin-top: -56px;
 }
-#home { /* Special handling for home as it's the first section */
+#home {
     padding-top: 0;
-    margin-top: 0; /* No negative margin needed for the very first section if it's full viewport height */
+    margin-top: 0;
+}*/
+
+/* Ensure content on non-home pages isn't hidden by fixed navbar */
+/* body.pt-5 main.mt-5 is handled in header.php by adding classes */
+
+/* Carousel specific styles */
+.carousel-item {
+    height: 70vh; /* Default height for carousel items, adjust as needed */
+    min-height: 400px; /* Minimum height */
+    background-size: cover;
+    background-position: center center;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for captions */
+    padding: 20px;
+    border-radius: .25rem;
+    bottom: 3rem; /* Adjust caption position */
+}
+
+.carousel-caption h5 {
+    font-size: 1.75rem; /* Larger caption title */
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    font-size: 1.1rem;
 }
