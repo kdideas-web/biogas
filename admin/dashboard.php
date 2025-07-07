@@ -20,13 +20,12 @@ require_once 'includes/header.php';
             </div>
         </div>
     </div>
-    <!-- Placeholder for other modules -->
     <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Manage Blog Posts (Coming Soon)</h5>
+                <h5 class="card-title">Manage Blog Posts</h5>
                 <p class="card-text">Create and update blog articles.</p>
-                <a href="#" class="btn btn-secondary disabled">Go to Blog</a>
+                <a href="manage_posts.php" class="btn btn-primary">Go to Blog</a>
             </div>
         </div>
     </div>

@@ -25,10 +25,14 @@
                     <li class="nav-item">
                         <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'manage_projects.php') ? 'active' : ''; ?>" href="manage_projects.php">Projects</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link <?php
+                            $post_pages = ['manage_posts.php', 'add_post.php', 'edit_post.php'];
+                            if (in_array(basename($_SERVER['PHP_SELF']), $post_pages)) { echo 'active'; }
+                        ?>" href="manage_posts.php">Blog Posts</a>
+                    </li>
                     <!-- Add more navigation links here as modules are developed -->
                     <!-- Example:
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'manage_posts.php') ? 'active' : ''; ?>" href="manage_posts.php">Blog Posts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'manage_services.php') ? 'active' : ''; ?>" href="manage_services.php">Services</a>
