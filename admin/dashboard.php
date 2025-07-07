@@ -32,9 +32,9 @@ require_once 'includes/header.php';
     <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Site Settings (Coming Soon)</h5>
+                <h5 class="card-title">Site Settings</h5>
                 <p class="card-text">Update general site information.</p>
-                <a href="#" class="btn btn-secondary disabled">Go to Settings</a>
+                <a href="site_settings.php" class="btn btn-primary">Go to Settings</a>
             </div>
         </div>
     </div>

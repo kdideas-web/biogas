@@ -92,16 +92,27 @@ if (isset($_GET['service'])) {
             </div>
             <div class="col-lg-5">
                 <h3 class="mb-4">Contact Information</h3>
-                <p><strong>BioGas Accra Ltd.</strong></p>
+                <p><strong><?php echo htmlspecialchars(get_site_setting('site_name', 'BioGas Accra Ltd.')); ?></strong></p>
                 <p>
-                    <i class="fas fa-map-marker-alt me-2"></i> 123 Biogas Lane, East Legon<br>
-                    Accra, Greater Accra Region, Ghana
+                    <i class="fas fa-map-marker-alt me-2"></i>
+                    <?php
+                        $address = get_site_setting('contact_address', "123 Biogas Lane, East Legon\nAccra, Greater Accra Region, Ghana");
+                        echo nl2br(htmlspecialchars($address));
+                    ?>
                 </p>
                 <p>
-                    <i class="fas fa-phone me-2"></i> <a href="tel:+233241234567">+233 24 123 4567</a>
+                    <i class="fas fa-phone me-2"></i>
+                    <?php
+                        $phone = get_site_setting('contact_phone', '+233 24 123 4567');
+                        echo '<a href="tel:' . htmlspecialchars(str_replace(' ', '', $phone)) . '">' . htmlspecialchars($phone) . '</a>';
+                    ?>
                 </p>
                 <p>
-                    <i class="fas fa-envelope me-2"></i> <a href="mailto:info@biogasaccra.com">info@biogasaccra.com</a>
+                    <i class="fas fa-envelope me-2"></i>
+                    <?php
+                        $email = get_site_setting('contact_email', 'info@biogasaccra.com');
+                        echo '<a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a>';
+                    ?>
                 </p>
                 <p>
                     <i class="fas fa-clock me-2"></i> <strong>Business Hours:</strong><br>

@@ -61,8 +61,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h2>Welcome to BioGas Accra</h2>
-                <p>We are a leading provider of innovative biogas solutions in Ghana, dedicated to helping communities, businesses, and agricultural sectors harness the power of organic waste. Our mission is to contribute to a sustainable environment by reducing emissions and providing affordable energy.</p>
+                <h2><?php echo htmlspecialchars(get_site_setting('home_welcome_title', 'Welcome to BioGas Accra')); ?></h2>
+                <p><?php echo nl2br(htmlspecialchars(get_site_setting('home_welcome_paragraph', 'We are a leading provider of innovative biogas solutions in Ghana, dedicated to helping communities, businesses, and agricultural sectors harness the power of organic waste. Our mission is to contribute to a sustainable environment by reducing emissions and providing affordable energy.'))); ?></p>
                 <a href="about.php" class="btn btn-outline-primary">Learn More About Us</a>
             </div>
             <div class="col-lg-6 text-center">
@@ -75,7 +75,7 @@
 <!-- Key Services Highlights for Homepage -->
 <section id="home-services" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">Our Core Services</h2>
+        <h2 class="text-center mb-5"><?php echo htmlspecialchars(get_site_setting('home_core_services_title', 'Our Core Services')); ?></h2>
         <div class="row">
             <div class="col-md-4 service-card">
                 <div class="card text-center h-100">

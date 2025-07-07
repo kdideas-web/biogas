@@ -31,14 +31,13 @@
                             if (in_array(basename($_SERVER['PHP_SELF']), $post_pages)) { echo 'active'; }
                         ?>" href="manage_posts.php">Blog Posts</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'site_settings.php') ? 'active' : ''; ?>" href="site_settings.php">Site Settings</a>
+                    </li>
                     <!-- Add more navigation links here as modules are developed -->
                     <!-- Example:
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'manage_services.php') ? 'active' : ''; ?>" href="manage_services.php">Services</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'site_settings.php') ? 'active' : ''; ?>" href="site_settings.php">Site Settings</a>
                     </li>
                     -->
                 </ul>

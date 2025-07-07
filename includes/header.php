@@ -1,7 +1,11 @@
 <?php
   session_start(); // Start session for messages, etc.
+  require_once __DIR__ . '/db.php'; // Ensure DB connection is available for settings helper
+  require_once __DIR__ . '/settings_helper.php'; // Include the settings helper
+
   // Define the current page based on the script name
   $current_page = basename($_SERVER['PHP_SELF']);
+  $site_name = get_site_setting('site_name', 'BioGas Accra'); // Example for site name
 ?>
 <!DOCTYPE html>
 <html lang="en">
